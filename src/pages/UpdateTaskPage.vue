@@ -29,8 +29,8 @@
                         required
                     />
                 </div>
-                <div class="d-flex mt-5">
-                    <router-link to="/" class="btn btn-outline-warning rounded-5 w-100 p-2 px-5 mx-4">Cancel</router-link>
+                <div class="d-flex flex-column flex-md-row mt-5">
+                    <router-link to="/" class="btn btn-outline-warning rounded-5 w-100 p-2 px-5 mx-0 mx-md-4 my-3 my-md-0">Cancel</router-link>
     
                     <button
                         type="submit"
