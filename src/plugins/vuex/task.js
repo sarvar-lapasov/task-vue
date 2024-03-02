@@ -18,9 +18,6 @@ export default {
                 axios
                     .get(url)
                     .then((response) => {
-                        console.log("tasklar muvaffaqiyatli olindi");
-                        console.log(response.data.data);
-                        console.log(response.data);
                         let tasks = {
                             models: response.data.data,
                             totalItems: response.data.total,
@@ -29,7 +26,6 @@ export default {
                         resolve();
                     })
                     .catch(() => {
-                        console.log("tasklar olishda xatolik");
                         reject();
                     });
             });
@@ -39,15 +35,10 @@ export default {
                 axios
                     .get(`/tasks/${taskId}`)
                     .then((response) => {
-                        console.log("tasklar muvaffaqiyatli olindi");
-                        console.log(response.data.data);
-                        console.log(response.data);
-
                         context.commit("updateTask", response.data.data);
                         resolve();
                     })
                     .catch(() => {
-                        console.log("tasklar olishda xatolik");
                         reject();
                     });
             });
@@ -58,20 +49,12 @@ export default {
                 axios
                     .post("/tasks", data)
                     .then((response) => {
-                        console.log("yangi task bazaga qoshildi");
-                        console.log(response.data);
                         console.log(response);
-                        console.log(data);
                         resolve();
                     })
                     .catch(() => {
-                        console.log("yangi task bazaga qoshilmadi");
-                        console.log(data);
                         reject();
                     })
-                    .finally(() => {
-                        console.log("oxirgi bolib finally() ishladi");
-                    });
             });
         },
         updateTask(context, { taskId, data }) {
@@ -79,20 +62,12 @@ export default {
                 axios
                     .put(`/tasks/${taskId}`, data)
                     .then((response) => {
-                        console.log("yangi task update");
-                        console.log(response.data);
                         console.log(response);
-                        console.log(taskId, data);
                         resolve();
                     })
                     .catch(() => {
-                        console.log("yangi task update qoshilmadi");
-                        console.log(data);
                         reject();
                     })
-                    .finally(() => {
-                        console.log("oxirgi bolib finally() ishladi");
-                    });
             });
         },
         deleteTask(context, taskId) {
@@ -100,13 +75,10 @@ export default {
                 axios
                     .delete(`/tasks/${taskId}`)
                     .then((response) => {
-                        console.log("task ochirildi");
                         console.log(response);
-                        console.log(taskId);
                         resolve();
                     })
                     .catch(() => {
-                        console.log("tasklar ochirishda xatolik");
                         reject();
                     });
             });

@@ -48,7 +48,7 @@
 import { mapActions, mapGetters } from "vuex";
 
 export default {
-    name: "AddtaskPage",
+    name: "CreateTaskPage",
     computed: {
         ...mapGetters([]),
     },
@@ -77,10 +77,6 @@ export default {
                 });
         },
 
-    },
-
-    mounted() {
-        console.log("task page ishladi");
     },
 };
 </script>

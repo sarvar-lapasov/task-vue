@@ -84,7 +84,6 @@
                     .then(()=>{
                         this.addTask = this.getTask
                     })
-            console.log("task page ishladi");
         },
     };
     </script>
