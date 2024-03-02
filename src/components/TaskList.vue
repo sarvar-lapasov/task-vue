@@ -8,7 +8,7 @@
       <div class="text-start d-flex justify-content-between mt-5">
         <div class="d-flex">
             <div>
-              <select class="form-select rounded-3 p-2 px-3"  v-model="filterStatus" @change="applyFilter">
+              <select class="form-control rounded-3 p-2 px-3"  v-model="filterStatus" @change="applyFilter">
                 <option value="">All</option>
                 <option value="0">UnCompleted</option>
                 <option value="1">Completed</option>
@@ -99,3 +99,8 @@
     },
   };
   </script>
+  <style scoped>
+  .form-control{
+    width: 250px;
+  }
+</style>
