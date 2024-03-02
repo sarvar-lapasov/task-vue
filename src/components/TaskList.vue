@@ -23,14 +23,14 @@
         </div>
       </div>
       <div
-        class="border d-flex flex-column flex-md-row justify-content-between align-items-center rounded-5 my-4 px-5 py-3"
+        class="border d-flex flex-column flex-md-row justify-content-between align-items-center rounded-5 my-4 px-5 py-4"
         v-for="task in getTasks"
         :key="task.id"
         :class="{'bg-light':task.completed}"
       
       >
         <div class="d-flex flex-column text-start" :class="{'text-decoration-line-through':task.completed}">
-        <div class="text-start d-flex align-items-center mx-md-4 mx-0 my-3 my-md-0">
+        <div class="text-start d-flex align-items-center my-3 my-md-0">
             <input class="form-check-input " type="checkbox" id="gridCheck" @change="toggleEvent(task.id, !task.completed)"  :checked="task.completed">
             <div class="mx-2">
                 <h6 class="text-secondary m-0">
