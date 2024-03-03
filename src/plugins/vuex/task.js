@@ -53,7 +53,7 @@ export default {
                     })
             });
         },
-        updateTask(context, { taskId, data }) {
+        updateTask(context, {taskId, data}) {
             return new Promise((resolve, reject) => {
                 axios
                     .put(`/tasks/${taskId}`, data)
