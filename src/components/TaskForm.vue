@@ -1,6 +1,6 @@
 <template>
     <div class="text-center mt-5">
-      <div class="d-flex justify-content-center align-content-center mt">
+      <div class="d-flex justify-content-center align-content-center">
         <form class="col-lg-4 col-md-6 col-8 mb-4" @submit.prevent="submit">
           <div class="mb-3">
             <label for="taskTitle" class="form-label">Title</label>
