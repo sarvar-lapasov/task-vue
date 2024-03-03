@@ -18,11 +18,7 @@ export default {
                 axios
                     .get(url)
                     .then((response) => {
-                        let tasks = {
-                            models: response.data.data,
-                            totalItems: response.data.total,
-                        };
-                        context.commit("updateTasks", tasks);
+                        context.commit("updateTasks", response.data.data);
                         resolve();
                     })
                     .catch(() => {
@@ -95,22 +91,17 @@ export default {
 
     },
     state: {
-        tasks: {
-            models: [],
-            totalItems: 0,
-        },
+        tasks: [],
         task: "",
 
     },
     getters: {
         getTasks(state) {
-            return state.tasks.models;
+            return state.tasks;
         },
         getTask(state) {
             return state.task;
         },
-        getTaskTotal(state) {
-            return state.tasks.totalItems;
-        }
+
     },
 };
