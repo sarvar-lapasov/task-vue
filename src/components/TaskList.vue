@@ -1,7 +1,5 @@
 <template>
-    <div class="container text-center mt-5">
-      <h1>Task List</h1>
-      <hr>
+    <div class="text-center mt-5">
       <div>
         <router-link class="btn btn-outline-success rounded-5 p-2 px-5" to="/createTask">Create Task</router-link>
       </div>
