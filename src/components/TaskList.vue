@@ -45,7 +45,7 @@
         </div>
         <div class="flex-column flex-md-row ">
           <div>
-            <p class="text-warning text-center text-md-end">{{ dayjs(task.createdAt).format('DD-MM-YYYY HH:mm:ss') }}</p>
+            <p class="text-warning text-center text-md-end">{{ dayjs(task.created_at).tz('Asia/Tashkent').format('DD-MM-YYYY HH:mm:ss') }}</p>
           </div>
           <div class="d-flex flex-column flex-md-row">
             <router-link :to="'/updateTask/' + task.id" class="btn btn-outline-success w-100 w-md-50 rounded-5 p-2 px-5 mx-0 mx-md-4 my-3 my-md-0">Edit</router-link>
@@ -59,7 +59,10 @@
   <script>
   import { mapActions, mapGetters } from "vuex";
   import dayjs from "dayjs";
-  
+  import timezone from "dayjs/plugin/timezone"
+  import utc from "dayjs/plugin/utc"
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
   export default {
     name: "TaskList",
     data() {
