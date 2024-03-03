@@ -55,9 +55,6 @@
     },
     computed: {
       ...mapGetters(["getTask"]),
-      pageTitle() {
-        return this.taskId ? "Update Task" : "Create Task";
-      },
     },
     data() {
       return {
